@@ -1,15 +1,13 @@
-# 変更の概要 (Summary of Changes)
+# Summary of Changes
 
-## チケットへのリンク (Link to Ticket)
+## Link to Ticket
 
-## バグの場合は原因と対応内容 (For Bugs: Cause and Fix)
+## 🐛Required for bug fixes: Cause (バグの場合は必須入力: 原因)
 
-## 課題、対応していないこと (Issues and Unaddressed Points)
+## 🐛Required for bug fixes: Fix (バグの場合は必須入力: 対応内容)
 
-## スクリーンショット/画面収録など (Screenshots/Screen Recordings, etc.)
+## Screenshots/Screen Recordings, etc.
 
-## 影響範囲 (Scope of Impact)
+## Optional: Issues and Unaddressed Points (課題、対応していないこと)
 
-## 参考リンク (Reference Links)
-
-## その他レビュワーに伝えたいこと (Additional Information for Reviewers)
+## Optional: Additional Information for Reviewers (その他レビュワーに伝えたいこと)
