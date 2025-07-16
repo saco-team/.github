@@ -2,6 +2,8 @@
 
 ## チケットへのリンク (Link to Ticket)
 
+## バグの場合は原因と対応内容 (For Bugs: Cause and Fix)
+
 ## 課題、対応していないこと (Issues and Unaddressed Points)
 
 ## スクリーンショット/画面収録など (Screenshots/Screen Recordings, etc.)
