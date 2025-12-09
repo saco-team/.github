@@ -2,12 +2,16 @@
 
 ## Link to Ticket
 
-## 🐛Required for bug fixes: Cause (バグの場合は必須入力: 原因)
+## Deployment tasks (required if DB migration or script is needed)
 
-## 🐛Required for bug fixes: Fix (バグの場合は必須入力: 対応内容)
+<!-- Environment(s), command, timing, rollback, etc. -->
 
-## Screenshots/Screen Recordings, etc.
+## 🐛Bug fixes: Root cause (required for bug fixes)
 
-## Optional: Issues and Unaddressed Points (課題、対応していないこと)
+## 🐛Bug fixes: Fix (required for bug fixes)
 
-## Optional: Additional Information for Reviewers (その他レビュワーに伝えたいこと)
+## Screenshots / Screen recordings
+
+## Optional: Issues or remaining work
+
+## Optional: Notes for reviewers
