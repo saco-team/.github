@@ -2,6 +2,8 @@
 
 ## Link to Ticket
 
+<!-- Closes #123 のように記載すると、PR マージ時に Issue が自動クローズされます -->
+
 ## Deployment tasks (required if DB migration or script is needed)
 
 <!-- Environment(s), command, timing, rollback, etc. -->
