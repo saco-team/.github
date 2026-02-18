@@ -1,0 +1,232 @@
+name: "Feature (Large)"
+description: "新機能・大規模変更（見積り3日以上）- 全ワークフローステップ必須"
+title: "[Large] "
+labels: ["type: feature", "size: large"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Large Feature テンプレート
+        見積り3日以上の新機能・大規模変更用です。
+        全ワークフローステップ（Example Mapping → 設計 → 設計レビュー → ATDD → 開発 → AIレビュー → PR）が必須です。
+
+  # ── 概要 ──
+  - type: textarea
+    id: summary
+    attributes:
+      label: "概要"
+      description: "この機能の目的と背景を簡潔に記述してください"
+      placeholder: "何を、なぜ実装するのか"
+    validations:
+      required: true
+
+  # ── ユーザーストーリー ──
+  - type: textarea
+    id: user-story
+    attributes:
+      label: "ユーザーストーリー"
+      description: "誰が、何をしたいのか、なぜしたいのか"
+      placeholder: |
+        As a [ユーザー種別],
+        I want [達成したいこと],
+        So that [理由・価値]
+    validations:
+      required: true
+
+  # ── 受入基準（Given-When-Then） ──
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "受入基準（Given-When-Then）"
+      description: |
+        Example Mapping セッション（25-30分）の結果を記載してください。
+        各ルールに対して具体的なシナリオを Given-When-Then 形式で記述します。
+      placeholder: |
+        ### ルール1: [ルール名]
+
+        **シナリオ1:**
+        - Given: [前提条件]
+        - When: [操作]
+        - Then: [期待結果]
+
+        **シナリオ2:**
+        - Given: [前提条件]
+        - When: [操作]
+        - Then: [期待結果]
+
+        ### ルール2: [ルール名]
+
+        **シナリオ1:**
+        - Given: [前提条件]
+        - When: [操作]
+        - Then: [期待結果]
+      render: markdown
+    validations:
+      required: true
+
+  # ── 未解決の疑問 ──
+  - type: textarea
+    id: open-questions
+    attributes:
+      label: "未解決の疑問"
+      description: "Example Mapping で出た疑問（赤カード）のうち、未解決のものを記載"
+      placeholder: |
+        - [ ] 疑問1: ...
+        - [ ] 疑問2: ...
+      render: markdown
+    validations:
+      required: false
+
+  # ── やること / やらないこと ──
+  - type: textarea
+    id: scope
+    attributes:
+      label: "スコープ（やること / やらないこと）"
+      description: "実装範囲を明確にしてください"
+      placeholder: |
+        ### やること
+        -
+        -
+
+        ### やらないこと
+        -
+        -
+      render: markdown
+    validations:
+      required: true
+
+  # ── 設計ドキュメント ──
+  - type: textarea
+    id: design-doc
+    attributes:
+      label: "設計ドキュメント"
+      description: |
+        設計ドキュメントへのリンク、または直接記載してください。
+        テンプレート: docs/PRs/{タスクID}/design.md
+      placeholder: |
+        設計ドキュメントリンク: docs/PRs/ISSUE-XXX/design.md
+
+        または以下に直接記載:
+
+        ### 変更するファイル/コンポーネント
+        | ファイルパス | 変更内容 |
+        |-------------|---------|
+        | | |
+
+        ### データフロー
+        - 状態管理:
+        - API:
+
+        ### エッジケースの考慮（最低3つ）
+        -
+        -
+        -
+      render: markdown
+    validations:
+      required: false
+
+  # ── テスト方針 ──
+  - type: textarea
+    id: test-plan
+    attributes:
+      label: "テスト方針"
+      description: "ATDD テストの対象とテストケース概要"
+      placeholder: |
+        ### テスト対象
+        -
+
+        ### テストケース
+        | ケース | 種別 | 期待結果 |
+        |--------|------|---------|
+        | | Integration | |
+        | | Integration | |
+      render: markdown
+    validations:
+      required: false
+
+  # ── 影響範囲 ──
+  - type: textarea
+    id: impact
+    attributes:
+      label: "影響範囲"
+      description: "この変更が影響する画面・機能・ユーザーフロー"
+      placeholder: |
+        - 影響する画面:
+        - 影響する機能:
+        - 既存機能への影響:
+    validations:
+      required: true
+
+  # ── ワークフローチェックリスト ──
+  - type: checkboxes
+    id: workflow-checklist
+    attributes:
+      label: "ワークフローチェックリスト"
+      description: "各ステップの完了をチェックしてください（進行に応じて更新）"
+      options:
+        - label: "Example Mapping 実施済み（25-30分）"
+        - label: "受入基準を Given-When-Then で記述済み"
+        - label: "未解決の疑問を PO/PM に確認済み"
+        - label: "技術調査完了"
+        - label: "設計ドキュメント作成済み"
+        - label: "軽量プレモーテム実施済み（失敗モード3つ以上）"
+        - label: "/reviewing-designs 実施済み"
+        - label: "ATDD テスト作成済み（/generate-tests）"
+        - label: "実装完了（テスト GREEN）"
+        - label: "/code-review 実施済み"
+        - label: "セルフレビュー完了"
+        - label: "PR 作成済み"
+
+  # ── 設計レビュー必須判定 ──
+  - type: checkboxes
+    id: design-review-required
+    attributes:
+      label: "設計レビュー必須チェック"
+      description: "以下のいずれかに該当する場合、設計ドキュメント作成と /reviewing-designs が必須です"
+      options:
+        - label: "新機能の追加"
+        - label: "DBスキーマの変更"
+        - label: "新しいライブラリの導入"
+        - label: "API設計の変更"
+        - label: "複数画面に影響する変更"
+        - label: "不明点が多い（自信がない）"
+
+  # ── 受入検証者 ──
+  - type: input
+    id: acceptance-reviewer
+    attributes:
+      label: "受入検証者（任意）"
+      description: "受入検証する人の GitHub ユーザー名を @付きで記載すると、Issue クローズ時に通知が届きます"
+      placeholder: "@username"
+    validations:
+      required: false
+
+  # ── 関連情報 ──
+  - type: input
+    id: backlog-link
+    attributes:
+      label: "関連 Backlog タスク（任意）"
+      description: "移行元の Backlog タスクがある場合はリンクを記載"
+      placeholder: "https://xxx.backlog.com/view/PROJ-123"
+    validations:
+      required: false
+
+  - type: input
+    id: design-doc-link
+    attributes:
+      label: "設計ドキュメントリンク（任意）"
+      description: "設計ドキュメントのパスまたはリンク"
+      placeholder: "docs/PRs/ISSUE-XXX/design.md"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "優先度"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true

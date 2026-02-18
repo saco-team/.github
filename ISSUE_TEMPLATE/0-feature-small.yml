@@ -1,0 +1,102 @@
+name: "Feature (Small)"
+description: "軽微な機能追加・小規模変更（見積り1-2時間）"
+title: "[Small] "
+labels: ["type: feature", "size: small"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Small Feature テンプレート
+        見積り1-2時間の軽微な機能追加・小規模変更用です。
+        ワークフロー: 要件確認 → 開発 → AIレビュー → セルフレビュー → PR
+
+  # ── 概要 ──
+  - type: textarea
+    id: summary
+    attributes:
+      label: "概要"
+      description: "この変更の目的と背景を簡潔に記述してください"
+      placeholder: "何を、なぜ実装するのか"
+    validations:
+      required: true
+
+  # ── 受入基準（Given-When-Then） ──
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "受入基準（Given-When-Then）"
+      description: "完了と判断できる条件を記述してください"
+      placeholder: |
+        - Given: [前提条件]
+          When: [操作]
+          Then: [期待結果]
+      render: markdown
+    validations:
+      required: true
+
+  # ── 実装メモ ──
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: "実装メモ（任意）"
+      description: "変更するファイルや注意点があれば記載"
+      placeholder: |
+        - 変更するファイル:
+        - 注意点:
+    validations:
+      required: false
+
+  # ── 影響範囲 ──
+  - type: textarea
+    id: impact
+    attributes:
+      label: "影響範囲"
+      description: "この変更が影響する画面・機能"
+      placeholder: |
+        - 影響する画面:
+        - 既存機能への影響:
+    validations:
+      required: true
+
+  # ── ワークフローチェックリスト ──
+  - type: checkboxes
+    id: workflow-checklist
+    attributes:
+      label: "ワークフローチェックリスト"
+      description: "各ステップの完了をチェックしてください"
+      options:
+        - label: "要件確認（受入基準の合意）"
+        - label: "実装完了"
+        - label: "/code-review 実施済み"
+        - label: "セルフレビュー完了"
+        - label: "PR 作成済み"
+
+  # ── 受入検証者 ──
+  - type: input
+    id: acceptance-reviewer
+    attributes:
+      label: "受入検証者（任意）"
+      description: "受入検証する人の GitHub ユーザー名を @付きで記載"
+      placeholder: "@username"
+    validations:
+      required: false
+
+  # ── 関連情報 ──
+  - type: input
+    id: backlog-link
+    attributes:
+      label: "関連 Backlog タスク（任意）"
+      placeholder: "https://xxx.backlog.com/view/PROJ-123"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "優先度"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true

@@ -1,0 +1,122 @@
+name: "Tech Debt / Refactoring"
+description: "技術的負債の解消・リファクタリング・開発環境改善"
+title: "[Tech] "
+labels: ["type: tech-debt"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Tech Debt / Refactoring テンプレート
+        技術的負債の解消、リファクタリング、開発環境改善、CI/CD改善などに使用します。
+
+  # ── 概要 ──
+  - type: textarea
+    id: summary
+    attributes:
+      label: "概要"
+      description: "何を改善するのか、なぜ今やる必要があるのか"
+      placeholder: |
+        ### 現状の問題
+
+
+        ### 改善後の状態
+
+    validations:
+      required: true
+
+  # ── カテゴリ ──
+  - type: dropdown
+    id: category
+    attributes:
+      label: "カテゴリ"
+      options:
+        - "リファクタリング"
+        - "パフォーマンス改善"
+        - "CI/CD 改善"
+        - "開発環境改善"
+        - "依存パッケージ更新"
+        - "セキュリティ対応"
+        - "テスト追加"
+        - "ドキュメント整備"
+        - "その他"
+    validations:
+      required: true
+
+  # ── 改善計画 ──
+  - type: textarea
+    id: plan
+    attributes:
+      label: "改善計画"
+      description: "具体的な変更内容と手順"
+      placeholder: |
+        ### 変更するファイル/コンポーネント
+        -
+
+        ### 手順
+        1.
+        2.
+        3.
+
+        ### リスク
+        -
+      render: markdown
+    validations:
+      required: true
+
+  # ── 完了条件 ──
+  - type: textarea
+    id: done-criteria
+    attributes:
+      label: "完了条件"
+      description: "改善が完了したと判断できる条件"
+      placeholder: |
+        - [ ] 条件1
+        - [ ] 条件2
+      render: markdown
+    validations:
+      required: true
+
+  # ── ワークフローチェックリスト ──
+  - type: checkboxes
+    id: workflow-checklist
+    attributes:
+      label: "ワークフローチェックリスト"
+      description: "各ステップの完了をチェックしてください"
+      options:
+        - label: "計画策定完了"
+        - label: "実装完了"
+        - label: "/code-review 実施済み"
+        - label: "セルフレビュー完了"
+        - label: "PR 作成済み"
+
+  # ── サイズ ──
+  - type: dropdown
+    id: size
+    attributes:
+      label: "見積りサイズ"
+      options:
+        - "Small（1-2時間）"
+        - "Medium（1-2日）"
+        - "Large（3日以上）"
+    validations:
+      required: true
+
+  # ── 関連情報 ──
+  - type: input
+    id: backlog-link
+    attributes:
+      label: "関連 Backlog タスク（任意）"
+      placeholder: "https://xxx.backlog.com/view/PROJ-123"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "優先度"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true

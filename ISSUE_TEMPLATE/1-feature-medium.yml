@@ -1,0 +1,172 @@
+name: "Feature (Medium)"
+description: "機能追加・中規模変更（見積り1-2日）- Example Mapping + 設計 + AIレビュー"
+title: "[Medium] "
+labels: ["type: feature", "size: medium"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Medium Feature テンプレート
+        見積り1-2日の機能追加・中規模変更用です。
+        ワークフロー: Example Mapping → 技術調査 → 設計 → 設計レビュー → 開発 → AIレビュー → PR
+
+  # ── 概要 ──
+  - type: textarea
+    id: summary
+    attributes:
+      label: "概要"
+      description: "この機能の目的と背景を簡潔に記述してください"
+      placeholder: "何を、なぜ実装するのか"
+    validations:
+      required: true
+
+  # ── 受入基準（Given-When-Then） ──
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "受入基準（Given-When-Then）"
+      description: |
+        Example Mapping の結果を記載してください。
+        各ルールに対して具体的なシナリオを Given-When-Then 形式で記述します。
+      placeholder: |
+        ### ルール1: [ルール名]
+
+        **シナリオ1:**
+        - Given: [前提条件]
+        - When: [操作]
+        - Then: [期待結果]
+
+        ### ルール2: [ルール名]
+
+        **シナリオ1:**
+        - Given: [前提条件]
+        - When: [操作]
+        - Then: [期待結果]
+      render: markdown
+    validations:
+      required: true
+
+  # ── 未解決の疑問 ──
+  - type: textarea
+    id: open-questions
+    attributes:
+      label: "未解決の疑問"
+      description: "Example Mapping で出た疑問のうち、未解決のものを記載"
+      placeholder: |
+        - [ ] 疑問1: ...
+        - [ ] 疑問2: ...
+      render: markdown
+    validations:
+      required: false
+
+  # ── スコープ ──
+  - type: textarea
+    id: scope
+    attributes:
+      label: "スコープ（やること / やらないこと）"
+      description: "実装範囲を明確にしてください"
+      placeholder: |
+        ### やること
+        -
+        -
+
+        ### やらないこと
+        -
+      render: markdown
+    validations:
+      required: true
+
+  # ── 設計メモ ──
+  - type: textarea
+    id: design-notes
+    attributes:
+      label: "設計メモ"
+      description: |
+        変更するファイル・コンポーネントとデータフローの概要。
+        設計レビューが必須となるケース（新機能追加、DBスキーマ変更、新ライブラリ導入、API設計変更、複数画面影響）に該当する場合は、設計ドキュメント（docs/PRs/{タスクID}/design.md）を別途作成してください。
+      placeholder: |
+        ### 変更するファイル/コンポーネント
+        -
+
+        ### データフロー
+        -
+
+        ### エッジケースの考慮
+        -
+      render: markdown
+    validations:
+      required: true
+
+  # ── 影響範囲 ──
+  - type: textarea
+    id: impact
+    attributes:
+      label: "影響範囲"
+      description: "この変更が影響する画面・機能"
+      placeholder: |
+        - 影響する画面:
+        - 既存機能への影響:
+    validations:
+      required: true
+
+  # ── ワークフローチェックリスト ──
+  - type: checkboxes
+    id: workflow-checklist
+    attributes:
+      label: "ワークフローチェックリスト"
+      description: "各ステップの完了をチェックしてください（進行に応じて更新）"
+      options:
+        - label: "Example Mapping 実施済み"
+        - label: "受入基準を Given-When-Then で記述済み"
+        - label: "技術調査完了"
+        - label: "設計完了"
+        - label: "/reviewing-designs 実施済み"
+        - label: "実装完了"
+        - label: "/code-review 実施済み"
+        - label: "セルフレビュー完了"
+        - label: "PR 作成済み"
+
+  # ── 設計レビュー必須判定 ──
+  - type: checkboxes
+    id: design-review-required
+    attributes:
+      label: "設計レビュー必須チェック"
+      description: "以下のいずれかに該当する場合、設計ドキュメント作成と /reviewing-designs が必須です"
+      options:
+        - label: "新機能の追加"
+        - label: "DBスキーマの変更"
+        - label: "新しいライブラリの導入"
+        - label: "API設計の変更"
+        - label: "複数画面に影響する変更"
+        - label: "不明点が多い（自信がない）"
+
+  # ── 受入検証者 ──
+  - type: input
+    id: acceptance-reviewer
+    attributes:
+      label: "受入検証者（任意）"
+      description: "受入検証する人の GitHub ユーザー名を @付きで記載すると、Issue クローズ時に通知が届きます"
+      placeholder: "@username"
+    validations:
+      required: false
+
+  # ── 関連情報 ──
+  - type: input
+    id: backlog-link
+    attributes:
+      label: "関連 Backlog タスク（任意）"
+      description: "移行元の Backlog タスクがある場合はリンクを記載"
+      placeholder: "https://xxx.backlog.com/view/PROJ-123"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "優先度"
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true
