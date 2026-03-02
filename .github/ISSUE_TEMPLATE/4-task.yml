@@ -1,25 +1,26 @@
-name: "Tech Debt / Refactoring"
-description: "技術的負債の解消・リファクタリング・開発環境改善"
-title: "[Tech] "
-labels: ["type: tech-debt"]
+name: "Task"
+description: "作業依頼・技術的負債・リファクタリング・環境改善など"
+title: "[Task] "
+labels: ["type: task"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Tech Debt / Refactoring テンプレート
-        技術的負債の解消、リファクタリング、開発環境改善、CI/CD改善などに使用します。
+        ## Task テンプレート
+        Feature・Bug 以外の作業に使用します（技術的負債、リファクタリング、作業依頼、環境改善など）。
+        ワークフロー: 要件確認 → 開発 → AIレビュー → セルフレビュー → PR
 
   # ── 概要 ──
   - type: textarea
     id: summary
     attributes:
       label: "概要"
-      description: "何を改善するのか、なぜ今やる必要があるのか"
+      description: "何をするのか、なぜ必要なのかを記述してください"
       placeholder: |
-        ### 現状の問題
+        ### やること
 
 
-        ### 改善後の状態
+        ### 背景・目的
 
     validations:
       required: true
@@ -30,10 +31,10 @@ body:
     attributes:
       label: "カテゴリ"
       options:
+        - "作業依頼"
         - "リファクタリング"
         - "パフォーマンス改善"
-        - "CI/CD 改善"
-        - "開発環境改善"
+        - "CI/CD・開発環境改善"
         - "依存パッケージ更新"
         - "セキュリティ対応"
         - "テスト追加"
@@ -42,12 +43,25 @@ body:
     validations:
       required: true
 
-  # ── 改善計画 ──
+  # ── 完了条件 ──
+  - type: textarea
+    id: done-criteria
+    attributes:
+      label: "完了条件"
+      description: "作業が完了したと判断できる条件"
+      placeholder: |
+        - [ ] 条件1
+        - [ ] 条件2
+      render: markdown
+    validations:
+      required: true
+
+  # ── 作業計画（任意） ──
   - type: textarea
     id: plan
     attributes:
-      label: "改善計画"
-      description: "具体的な変更内容と手順"
+      label: "作業計画（任意）"
+      description: "具体的な変更内容、手順、リスクがあれば記載してください"
       placeholder: |
         ### 変更するファイル/コンポーネント
         -
@@ -55,26 +69,12 @@ body:
         ### 手順
         1.
         2.
-        3.
 
         ### リスク
         -
       render: markdown
     validations:
-      required: true
-
-  # ── 完了条件 ──
-  - type: textarea
-    id: done-criteria
-    attributes:
-      label: "完了条件"
-      description: "改善が完了したと判断できる条件"
-      placeholder: |
-        - [ ] 条件1
-        - [ ] 条件2
-      render: markdown
-    validations:
-      required: true
+      required: false
 
   # ── ワークフローチェックリスト ──
   - type: checkboxes
@@ -83,23 +83,20 @@ body:
       label: "ワークフローチェックリスト"
       description: "各ステップの完了をチェックしてください"
       options:
-        - label: "計画策定完了"
+        - label: "要件確認（完了条件の合意）"
         - label: "実装完了"
         - label: "/code-review 実施済み"
         - label: "セルフレビュー完了"
         - label: "PR 作成済み"
 
-  # ── サイズ ──
-  - type: dropdown
-    id: size
+  # ── 参考資料 ──
+  - type: textarea
+    id: references
     attributes:
-      label: "見積りサイズ"
-      options:
-        - "Small（1-2時間）"
-        - "Medium（1-2日）"
-        - "Large（3日以上）"
+      label: "参考資料（任意）"
+      description: "参考になるスクリーンショットや資料があれば添付してください"
     validations:
-      required: true
+      required: false
 
   # ── 関連情報 ──
   - type: input

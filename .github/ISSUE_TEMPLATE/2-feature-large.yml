@@ -1,7 +1,7 @@
 name: "Feature (Large)"
 description: "新機能・大規模変更（見積り3日以上）- 全ワークフローステップ必須"
 title: "[Large] "
-labels: ["type: feature", "size: large"]
+labels: ["type: feature", "size/L"]
 body:
   - type: markdown
     attributes:

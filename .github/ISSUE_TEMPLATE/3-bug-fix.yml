@@ -43,11 +43,10 @@ body:
     id: acceptance-criteria
     attributes:
       label: "受入基準"
-      description: "修正が完了したと判断できる条件"
+      description: "修正完了の判断基準。開発者はこの条件を回帰テストとして実装してください"
       placeholder: |
-        - Given: [前提条件]
-          When: [操作]
-          Then: [期待結果（修正後）]
+        - [ ] 再現手順で期待される動作になること
+        - [ ] （追加の確認観点があれば記載）
       render: markdown
     validations:
       required: true
@@ -100,23 +99,12 @@ body:
     validations:
       required: false
 
-  # ── サイズ ──
-  - type: dropdown
-    id: size
-    attributes:
-      label: "見積りサイズ"
-      options:
-        - "Small（1-2時間）"
-        - "Medium（1-2日）"
-        - "Large（3日以上）"
-    validations:
-      required: true
-
   # ── 環境 ──
   - type: dropdown
     id: environment
     attributes:
       label: "発生環境"
+      default: 2
       options:
         - "Production"
         - "Staging"
@@ -149,7 +137,6 @@ body:
     attributes:
       label: "優先度"
       options:
-        - "Critical"
         - "High"
         - "Medium"
         - "Low"
