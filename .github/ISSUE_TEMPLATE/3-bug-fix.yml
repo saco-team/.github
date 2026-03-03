@@ -1,7 +1,9 @@
 name: "Bug Fix"
 description: "バグ修正 - 軽量ワークフロー"
 title: "[Bug] "
-labels: ["type: bug"]
+labels: []
+type: "Bug"
+projects: ["saco-team/1"]
 body:
   - type: markdown
     attributes:
@@ -109,12 +111,12 @@ body:
         - "Production"
         - "Staging"
         - "Development"
-        - "全環境"
+        - "All"
     validations:
       required: true
 
   # ── 受入検証者 ──
-  - type: input
+  - type: textarea
     id: acceptance-reviewer
     attributes:
       label: "受入検証者（任意）"

@@ -1,7 +1,9 @@
 name: "Task"
 description: "作業依頼・技術的負債・リファクタリング・環境改善など"
 title: "[Task] "
-labels: ["type: task"]
+labels: []
+type: "Task"
+projects: ["saco-team/1"]
 body:
   - type: markdown
     attributes:
@@ -95,6 +97,16 @@ body:
     attributes:
       label: "参考資料（任意）"
       description: "参考になるスクリーンショットや資料があれば添付してください"
+    validations:
+      required: false
+
+  # ── 受入検証者 ──
+  - type: textarea
+    id: acceptance-reviewer
+    attributes:
+      label: "受入検証者（任意）"
+      description: "受入検証する人の GitHub ユーザー名を @付きで記載すると、Issue クローズ時に通知が届きます"
+      placeholder: "@username"
     validations:
       required: false
 

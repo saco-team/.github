@@ -1,7 +1,9 @@
 name: "Feature (Small)"
 description: "軽微な機能追加・小規模変更（見積り1-2時間）"
 title: "[Small] "
-labels: ["type: feature", "size/S"]
+labels: ["size/S"]
+type: "Feature"
+projects: ["saco-team/1"]
 body:
   - type: markdown
     attributes:
@@ -72,7 +74,7 @@ body:
         - label: "PR 作成済み"
 
   # ── 受入検証者 ──
-  - type: input
+  - type: textarea
     id: acceptance-reviewer
     attributes:
       label: "受入検証者（任意）"

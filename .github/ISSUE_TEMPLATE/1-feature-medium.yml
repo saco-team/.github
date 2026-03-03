@@ -1,7 +1,9 @@
 name: "Feature (Medium)"
 description: "機能追加・中規模変更（見積り1-2日）- Example Mapping + 設計 + AIレビュー"
 title: "[Medium] "
-labels: ["type: feature", "size/M"]
+labels: ["size/M"]
+type: "Feature"
+projects: ["saco-team/1"]
 body:
   - type: markdown
     attributes:
@@ -141,7 +143,7 @@ body:
         - label: "不明点が多い（自信がない）"
 
   # ── 受入検証者 ──
-  - type: input
+  - type: textarea
     id: acceptance-reviewer
     attributes:
       label: "受入検証者（任意）"

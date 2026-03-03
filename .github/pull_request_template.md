@@ -3,8 +3,9 @@
 ## Link to Ticket
 
 <!--
-  Closes #123 → マージ時に Issue を自動クローズ
-  Part of #123 → Issue にリンクのみ（Stacked PR の中間 PR で使用）
+  Deliver: #123   → 最終 PR。マージで「受入検証中」に自動遷移し、担当者が受入検証者（未設定なら起票者）に変更
+  Part of #123    → 中間 PR。ステータス変更なし
+  ※ Closes / Fixes / Resolves は使わないでください（受入検証前に Issue がクローズされるため）
 -->
 
 ## Stack (if stacked PR)
