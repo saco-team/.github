@@ -83,12 +83,15 @@ body:
     validations:
       required: false
 
-  # ── 関連情報 ──
-  - type: input
-    id: backlog-link
+  # ── 関連リンク ──
+  - type: textarea
+    id: related-links
     attributes:
-      label: "関連 Backlog タスク（任意）"
-      placeholder: "https://xxx.backlog.com/view/PROJ-123"
+      label: "関連リンク（任意）"
+      description: "関連する Backlog タスク、Issue、ドキュメントなどがあればリンクを記載してください"
+      placeholder: |
+        - https://xxx.backlog.com/view/PROJ-123
+        - #456
     validations:
       required: false
 

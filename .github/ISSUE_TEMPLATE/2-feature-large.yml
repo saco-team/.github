@@ -203,22 +203,16 @@ body:
     validations:
       required: false
 
-  # ── 関連情報 ──
-  - type: input
-    id: backlog-link
+  # ── 関連リンク ──
+  - type: textarea
+    id: related-links
     attributes:
-      label: "関連 Backlog タスク（任意）"
-      description: "移行元の Backlog タスクがある場合はリンクを記載"
-      placeholder: "https://xxx.backlog.com/view/PROJ-123"
-    validations:
-      required: false
-
-  - type: input
-    id: design-doc-link
-    attributes:
-      label: "設計ドキュメントリンク（任意）"
-      description: "設計ドキュメントのパスまたはリンク"
-      placeholder: "docs/PRs/ISSUE-XXX/design.md"
+      label: "関連リンク（任意）"
+      description: "関連する Backlog タスク、Issue、設計ドキュメントなどがあればリンクを記載してください"
+      placeholder: |
+        - https://xxx.backlog.com/view/PROJ-123
+        - #456
+        - docs/PRs/ISSUE-XXX/design.md
     validations:
       required: false
 
