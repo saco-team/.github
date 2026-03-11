@@ -3,21 +3,33 @@
 ## Link to Ticket
 
 <!--
-  Deliver: #123   → 最終 PR。マージで「受入検証中」に自動遷移し、担当者が受入検証者（未設定なら起票者）に変更
-  Part of #123    → 中間 PR。ステータス変更なし
-  ※ Closes / Fixes / Resolves は使わないでください（受入検証前に Issue がクローズされるため）
+  Final PR (one line per Issue) / 最終 PR（1 Issue につき 1 行）:
+    Deliver: #123
+    Deliver: #456
+
+  Intermediate PR (Stacked PR, etc.) / 中間 PR（Stacked PR 等）:
+    Part of: #123
+    Part of: #456
+
+  * Deliver: triggers status sync on merge (Status → Acceptance Testing)
+    マージ時に Issue が「受入検証中」に自動遷移し、担当者が受入検証者に変更されます
+  * Part of: links only — no status change / ステータス変更なし（リンクのみ）
+  * Do NOT use Closes / Fixes / Resolves (they close the Issue before acceptance testing)
+    Closes 等は受入検証前に Issue がクローズされるため使わないでください
 -->
 
 ## Stack (if stacked PR)
 
 <!--
-  Stacked PR の場合、スタック内の全 PR を順番にリストしてください。
-  現在の PR には 👈 を付けてください。単独 PR の場合はこのセクションを削除してください。
+  For Stacked PRs, list all PRs in the stack in order. Mark the current PR with 👈.
+  Delete this section for standalone PRs.
+  Stacked PR の場合、スタック内の全 PR を順番にリストし、現在の PR に 👈 を付けてください。
+  単独 PR の場合はこのセクションを削除してください。
 
-  例:
+  Example / 例:
   1. #101 feat: add user schema
   2. #102 feat: add user API 👈
-  3. (未作成) feat: add user UI
+  3. (not yet created / 未作成) feat: add user UI
 -->
 
 ## Deployment tasks (required if DB migration or script is needed)
