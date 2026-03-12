@@ -1,6 +1,6 @@
 name: "Feature (Small)"
 description: "軽微な機能追加・小規模変更（見積り1-2時間）"
-title: "[Small] "
+title: ""
 labels: ["size/S"]
 type: "Feature"
 projects: ["saco-team/1"]
