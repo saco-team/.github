@@ -2,7 +2,6 @@ name: "Feature (Large)"
 description: "新機能・大規模変更（見積り3日以上）- 全ワークフローステップ必須"
 title: ""
 labels: ["size/L"]
-type: "Feature"
 projects: ["saco-team/1"]
 body:
   - type: markdown
