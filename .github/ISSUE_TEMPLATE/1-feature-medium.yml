@@ -1,6 +1,5 @@
 name: "Feature (Medium)"
 description: "機能追加・中規模変更（見積り1-2日）- Example Mapping + 設計 + AIレビュー"
-title: ""
 labels: ["size/M"]
 projects: ["saco-team/1"]
 body:
