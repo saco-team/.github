@@ -1,5 +1,6 @@
 name: "Bug Fix"
 description: "バグ修正 - 軽量ワークフロー"
+type: "Bug"
 labels: []
 projects: ["saco-team/1"]
 body:

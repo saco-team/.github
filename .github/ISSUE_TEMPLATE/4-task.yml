@@ -1,5 +1,6 @@
 name: "Task"
 description: "作業依頼・技術的負債・リファクタリング・環境改善など"
+type: "Task"
 labels: []
 projects: ["saco-team/1"]
 body:
