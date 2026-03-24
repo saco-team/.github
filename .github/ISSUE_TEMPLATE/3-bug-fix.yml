@@ -81,6 +81,16 @@ body:
     validations:
       required: true
 
+  # ── 開発担当者 ──
+  - type: textarea
+    id: developer
+    attributes:
+      label: "開発担当者（任意）"
+      description: "開発を担当するエンジニアの GitHub ユーザー名を @付きで記載"
+      placeholder: "@username"
+    validations:
+      required: false
+
   # ── 受入検証者 ──
   - type: textarea
     id: acceptance-reviewer
