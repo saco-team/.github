@@ -26,10 +26,15 @@
   Stacked PR の場合、スタック内の全 PR を順番にリストし、現在の PR に 👈 を付けてください。
   単独 PR の場合はこのセクションを削除してください。
 
+  Use (planned) for PRs not yet created. If you start working on a follow-up branch,
+  add it as (planned) BEFORE the current PR is merged.
+  未作成の PR には (planned) を使用。後続ブランチの作業を開始したら、
+  現在の PR がマージされる前に (planned) として追記してください。
+
   Example / 例:
   1. #101 feat: add user schema
   2. #102 feat: add user API 👈
-  3. (not yet created / 未作成) feat: add user UI
+  3. (planned) feat: add user UI
 -->
 
 ## Deployment tasks (required if DB migration or script is needed)
