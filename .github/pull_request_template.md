@@ -37,9 +37,17 @@
   3. (planned) feat: add user UI
 -->
 
-## Deployment tasks (required if DB migration or script is needed)
+## Deployment tasks (required for DB migration, env var changes, or scripts)
 
-<!-- Environment(s), command, timing, rollback, etc. -->
+<!--
+  Required if the PR involves:
+  - DB migration
+  - Env var add / update / delete — list every layer touched (code, config, infra, secret store).
+    A missed layer can silently break deployment.
+  - Manual scripts
+
+  Include: target environment(s), commands in execution order, timing constraints, rollback plan.
+-->
 
 ## 🐛Bug fixes: Root cause (required for bug fixes)
 
