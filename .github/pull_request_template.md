@@ -37,17 +37,28 @@
   3. (planned) feat: add user UI
 -->
 
-## Deployment tasks (required for DB migration, env var changes, or scripts)
+## Deployment tasks (DB migration / env vars / scripts / Terraform / external settings)
 
 <!--
-  Required if the PR involves:
-  - DB migration
-  - Env var add / update / delete — list every layer touched (code, config, infra, secret store).
-    A missed layer can silently break deployment.
-  - Manual scripts
+  Check exactly one of the two boxes below. Do not edit, delete, or append to the box lines.
+  下のどちらか一方だけにチェックしてください。チェックの行の文言は変えず、消さず、書き足さないでください。
+
+  - No manual deployment work: check the first box and write nothing else in this section.
+    手動のデプロイ作業がない場合: 1 つ目にチェックし、この節には何も書かない。
+  - Manual deployment work: check the second box and describe the tasks below it.
+    手動のデプロイ作業がある場合: 2 つ目にチェックし、その下に作業内容を書く。
+
+  Manual deployment work / 手動のデプロイ作業:
+  DB migration, env var add / update / delete, manual scripts, Terraform, external system settings.
+  For env vars, list every layer touched (code, config, infra, secret store).
+  A missed layer can silently break deployment.
 
   Include: target environment(s), commands in execution order, timing constraints, rollback plan.
+  記載する内容: 対象環境、実行順のコマンド、タイミングの制約、ロールバック手順
 -->
+
+- [ ] No manual deployment tasks / 手動のデプロイ作業はない
+- [ ] Manual deployment tasks are described below / 手動のデプロイ作業がある（下に記載）
 
 ## 🐛Bug fixes: Root cause (required for bug fixes)
 
